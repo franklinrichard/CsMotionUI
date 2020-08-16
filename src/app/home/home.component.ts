@@ -11,7 +11,7 @@ import { takeUntil } from 'rxjs/operators';
 })
 export class HomeComponent implements OnInit {
   items :any=[];
-  
+  p: number = 1;
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
@@ -21,14 +21,14 @@ export class HomeComponent implements OnInit {
       this.items = res.items;
       //console.log(res.headers);
       console.log(this.items)
-
-
-      
     })  
   }
-   
+  
 
-
+  // onChangePage(pageOfItems: Array<any>) {
+  //   // update current page of items
+  //   this.pageOfItems = pageOfItems;
+  // }
 
 
 

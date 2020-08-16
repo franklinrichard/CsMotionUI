@@ -13,7 +13,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card'; 
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { SlickCarouselModule } from 'ngx-slick-carousel'; 
-import { MatPaginator } from '@angular/material/paginator';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { NgxPaginationModule } from 'ngx-pagination'; 
 
          
 
@@ -34,7 +35,9 @@ import { MatPaginator } from '@angular/material/paginator';
     MatCardModule,
     MatProgressSpinnerModule,
     SlickCarouselModule,
-    MatPaginator 
+    MatPaginatorModule,
+    NgxPaginationModule
+    
      
   ],
   providers: [],

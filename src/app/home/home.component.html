@@ -1,15 +1,8 @@
 <div style="padding: 13px;" style="text-align: center;">
     <mat-spinner *ngIf="items.length === 0"></mat-spinner>
-<mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" (page)="pageEvent = $event">
-</mat-paginator>
-<div *ngIf="pageEvent">
-    <h5>Page Change Event</h5>
-    <div>List length: {{pageEvent.length}}</div>
-    <div>Page size: {{pageEvent.pageSize}}</div>
-    <div>Page index: {{pageEvent.pageIndex}}</div>
-</div>
-
-    <mat-card *ngFor="let product of items" style="margin-top:10px;" >
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    <mat-card *ngFor="let product of items | paginate: { itemsPerPage: 3, currentPage: p }" style="margin-top:10px;" >
+       
         <mat-card-title>{{product.title}} </mat-card-title>
         <mat-card-subtitle>{{product.listingType}} / {{product.sellerType}}
         </mat-card-subtitle>
@@ -36,10 +29,7 @@
         </mat-card-actions>
         <mat-divider></mat-divider>
     </mat-card>
-</div>
-<div>
-    <button (click)="firstPage()" mat-button> First</button>
-    <button (click)="previousPage()" mat-button> Previous</button>
-    <button (click)="nextPage()" mat-button> Next</button>
-    <button (click)="lastPage()" mat-button> Last</button>
+
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+   
 </div>
