@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "csmotion-fc88c": {
+      "hosting": {
+        "angular-example": [
+          "csmotion-fc88c"
+        ]
+      }
+    }
+  }
+}

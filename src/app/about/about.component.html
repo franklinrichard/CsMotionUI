@@ -1,0 +1,40 @@
+<div style="padding: 100px;" style="text-align: center;">
+      
+            <mat-card-title>{{product.title}} </mat-card-title>
+            <mat-card-subtitle>{{product.listingType}} / {{product.sellerType}}</mat-card-subtitle>
+    <mat-card>
+        <mat-card-header >
+            
+           
+           
+        </mat-card-header>
+        <my-image-gallery mat-card-image></my-image-gallery>
+        <mat-card-content>
+            <!-- <p>
+                {{product.photos}}
+            </p> -->
+            <!-- <img style="height:100%; width: 100%;" src="{{ product.imageUrl }}" /> -->
+            <!-- <mat-card *ngFor="let photo of product.photos" style="margin-top:10px;">
+                    <img style="height:100%; width: 100%;" src="{{ photo }}" />
+            </mat-card> -->
+           
+            <hr style="background-color:black" />
+            <div>
+                <div class="row">
+                    <div class="col-sm-12 btn btn-primary">
+                        <mat-card-subtitle>Click and Drag to slide
+                        </mat-card-subtitle>
+            
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+                    <div ngxSlickItem *ngFor="let image of images" class="slide">
+                        <img src="{{ image}}" width="100%">
+                    </div>
+                </ngx-slick-carousel>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
