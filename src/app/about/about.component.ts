@@ -35,15 +35,14 @@ export class AboutComponent implements OnInit {
     this.url=this.router.url;
     this.params = this.router.parseUrl(this.url).queryParams;
     this.id = this.url.substring(7).toString();
-    console.log(this.id);
+   
     this.apiService.sendGetRequestById(this.id).subscribe((res: HttpResponse<any>) => {
       this.product = res;
       this.images = this.product.photos;
       this.featuresCollection= this.product.features;
       this.featuresGroup=this.groupBy(this.featuresCollection,'group');
       this.featureKeys = Object.keys(this.featuresGroup);
-      console.log(this.product);
-      console.log(this.groupBy(this.featuresCollection, 'group') );
+      
     })
   }
 

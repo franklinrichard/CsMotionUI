@@ -31,9 +31,7 @@
     <div>
     
         <mat-tab-group  *ngFor="let key of featureKeys" animationDuration="100ms" >
-            <!-- <mat-tab label="First">
-                <mat-card-subtitle><b>Type:</b>{{product.listingType}} / {{product.sellerType}}</mat-card-subtitle>
-            </mat-tab> -->
+           
             <mat-tab label={{key}}>
                 <div   *ngFor="let item of featuresGroup[key]">
                     <div>
@@ -41,7 +39,7 @@
                     </div>
                 </div>
             </mat-tab>
-            <!-- <mat-tab label="Third">Content 3</mat-tab> -->
+            
         </mat-tab-group>
        
     

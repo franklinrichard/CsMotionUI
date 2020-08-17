@@ -12,10 +12,12 @@ export class ApiService {
   public prev: string = "";
   public next: string = "";
   public last: string = "";
-
-  private SERVER_URL = "http://localhost:3000/Products"; 
-  private SERVER_URL1 = "https://localhost:5001/cars/listings"
-  private SERVER_URL2 = "https://localhost:5001/cars/details"
+ 
+  //Mock URL . Refer Readme for details
+  //private SERVER_URL = "http://localhost:3000/Products"; 
+  //
+  private Car_List_URL = "https://localhost:5001/cars/listings"
+  private Car_Details_URL = "https://localhost:5001/cars/details"
 
   constructor(private httpClient: HttpClient) { }
   
@@ -35,37 +37,21 @@ export class ApiService {
 
    public sendGetRequest() {
     // Add safe, URL encoded _page and _limit parameters 
-     var resp = this.httpClient.get(this.SERVER_URL1);
+     var resp = this.httpClient.get(this.Car_List_URL);
      console.log(resp);
-     return this.httpClient.get(this.SERVER_URL1);
+     return this.httpClient.get(this.Car_List_URL);
   }
 
   public sendGetRequestById(id:string) {
     // Add safe, URL encoded _page and _limit parameters 
-    var resp = this.httpClient.get(this.SERVER_URL2 + "/" + id);
-    console.log(this.SERVER_URL2 + "/" + id);
+    var resp = this.httpClient.get(this.Car_Details_URL + "/" + id);
+    console.log(this.Car_Details_URL + "/" + id);
     console.log(resp);
-    return this.httpClient.get(this.SERVER_URL2 + "/" + id);
+    return this.httpClient.get(this.Car_Details_URL + "/" + id);
   }
 
 
 
-  // public sendGetRequest() {
-  //   // Add safe, URL encoded _page and _limit parameters 
-
-  //   return this.httpClient.get(this.SERVER_URL1, { params: new HttpParams({ fromString: "_page=1&_limit=5" }), observe: "response" }).pipe(retry(3), catchError(this.handleError), tap(res => {
-  //     console.log(res.headers.get('Link'));
-  //     this.parseLinkHeader(res.headers.get('Link'));
-  //   }));
-  // }
-  
-
-  // public sendGetRequestById(id:string) {
-  //   // Add safe, URL encoded _page and _limit parameters 
-
-  //   return this.httpClient.get(this.SERVER_URL2+id, { params: new HttpParams(), observe: "response" }).pipe(retry(3), catchError(this.handleError), 
-  //   tap(res => { }));
-  // }
   
 
   public sendGetRequestToUrl(id: string) {

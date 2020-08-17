@@ -19,62 +19,7 @@ export class HomeComponent implements OnInit {
       //console.log(res);
       // @ts-ignore
       this.items = res.items;
-      //console.log(res.headers);
-      console.log(this.items)
+     
     })  
   }
-  
-
-  // onChangePage(pageOfItems: Array<any>) {
-  //   // update current page of items
-  //   this.pageOfItems = pageOfItems;
-  // }
-
-
-
-
-
-
-
-
-
-
-
-
-
-  public firstPage() {
-    this.items = [];
-    this.apiService.sendGetRequestToUrl(this.apiService.first).subscribe((res: HttpResponse<any>) => {
-      console.log(res);
-      this.items = res.body;
-    })
-  }
-  public previousPage() {
-
-    if (this.apiService.prev !== undefined && this.apiService.prev !== '') {
-      this.items = [];
-      this.apiService.sendGetRequestToUrl(this.apiService.prev).subscribe((res: HttpResponse<any>) => {
-        
-        this.items = res.body;
-      })
-    }
-
-  }
-  public nextPage() {
-    if (this.apiService.next !== undefined && this.apiService.next !== '') {
-      this.items = [];
-      this.apiService.sendGetRequestToUrl(this.apiService.next).subscribe((res: HttpResponse<any>) => {
-        console.log(res);
-        this.items = res.body;
-      })
-    }
-  }
-  public lastPage() {
-    this.items = [];
-    this.apiService.sendGetRequestToUrl(this.apiService.last).subscribe((res: HttpResponse<any>) => {
-      console.log(res);
-      this.items = res.body;
-    })
-  }
-
 }
