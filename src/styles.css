@@ -2,3 +2,20 @@
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+
+
+.slick-slider {
+  width: 90%;
+  margin: auto;
+  background: #000;
+}
+
+.nav-btn {
+  height: 47px;
+  position: absolute;
+  width: 26px;
+  cursor: pointer;
+  top: 100px !important;
+}

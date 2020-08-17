@@ -11,9 +11,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar'; 
 import { MatIconModule } from '@angular/material/icon'; 
 import { MatCardModule } from '@angular/material/card'; 
+
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { SlickCarouselModule } from 'ngx-slick-carousel'; 
-import { MatPaginatorModule } from '@angular/material/paginator';
+import {  MatTabsModule} from '@angular/material/tabs';
 import { NgxPaginationModule } from 'ngx-pagination'; 
 
          
@@ -35,7 +36,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     MatCardModule,
     MatProgressSpinnerModule,
     SlickCarouselModule,
-    MatPaginatorModule,
+    MatTabsModule,
     NgxPaginationModule
     
      

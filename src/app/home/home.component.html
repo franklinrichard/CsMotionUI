@@ -1,7 +1,7 @@
 <div style="padding: 13px;" style="text-align: center;">
     <mat-spinner *ngIf="items.length === 0"></mat-spinner>
-    <pagination-controls (pageChange)="p = $event"></pagination-controls>
-    <mat-card *ngFor="let product of items | paginate: { itemsPerPage: 3, currentPage: p }" style="margin-top:10px;" >
+    <pagination-controls (pageChange)="p = $event"></pagination-controls><b>Listing first 5 items</b>
+    <mat-card *ngFor="let product of items | paginate: { itemsPerPage: 5, currentPage: p }" style="margin-top:10px;" >
        
         <mat-card-title>{{product.title}} </mat-card-title>
         <mat-card-subtitle>{{product.listingType}} / {{product.sellerType}}
@@ -16,9 +16,9 @@
             <img style="height:50%; width: 50%;" src="{{ product.photo }}" />
             
             
-            <mat-card-subtitle><mat-card-bold>Odometer:</mat-card-bold>{{product.odometer}} </mat-card-subtitle>
-            <mat-card-subtitle>State:{{product.state}} </mat-card-subtitle>
-            <mat-card-subtitle>Price${{product.price}}</mat-card-subtitle>
+            <span><mat-card-subtitle><b>Odometer:</b>{{product.odometer}} </mat-card-subtitle></span>
+            <span><mat-card-subtitle><b>State:</b>{{product.state}} </mat-card-subtitle></span>
+            <span><mat-card-subtitle><b>Price$:</b>{{product.price}}</mat-card-subtitle></span>
             
         
         </mat-card-content>

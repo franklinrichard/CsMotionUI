@@ -1,28 +1,17 @@
 <div style="padding: 100px;" style="text-align: center;">
-      
-            <mat-card-title>{{product.title}} </mat-card-title>
-            <mat-card-subtitle>{{product.listingType}} / {{product.sellerType}}</mat-card-subtitle>
     <mat-card>
+            <mat-card-title>{{product !== undefined ? product.title : ''}} </mat-card-title>
+            <mat-card-subtitle>{{product !== undefined ? product.listingType : ''}} / {{product !== undefined ? product.sellerType : ''}}</mat-card-subtitle>
+
         <mat-card-header >
-            
-           
-           
         </mat-card-header>
         <my-image-gallery mat-card-image></my-image-gallery>
-        <mat-card-content>
-            <!-- <p>
-                {{product.photos}}
-            </p> -->
-            <!-- <img style="height:100%; width: 100%;" src="{{ product.imageUrl }}" /> -->
-            <!-- <mat-card *ngFor="let photo of product.photos" style="margin-top:10px;">
-                    <img style="height:100%; width: 100%;" src="{{ photo }}" />
-            </mat-card> -->
-           
+        <mat-card-content>           
             <hr style="background-color:black" />
             <div>
                 <div class="row">
                     <div class="col-sm-12 btn btn-primary">
-                        <mat-card-subtitle>Click and Drag to slide
+                        <mat-card-subtitle>Click and Drag to slide.Click on any image to hold
                         </mat-card-subtitle>
             
                     </div>
@@ -31,10 +20,30 @@
             <div class="row">
                 <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
                     <div ngxSlickItem *ngFor="let image of images" class="slide">
-                        <img src="{{ image}}" width="100%">
+                        <img src="{{image}}" width="100%">
                     </div>
+                   
                 </ngx-slick-carousel>
             </div>
+           
         </mat-card-content>
     </mat-card>
+    <div>
+    
+        <mat-tab-group  *ngFor="let key of featureKeys" animationDuration="100ms" >
+            <!-- <mat-tab label="First">
+                <mat-card-subtitle><b>Type:</b>{{product.listingType}} / {{product.sellerType}}</mat-card-subtitle>
+            </mat-tab> -->
+            <mat-tab label={{key}}>
+                <div   *ngFor="let item of featuresGroup[key]">
+                    <div>
+                        {{item.name}}
+                    </div>
+                </div>
+            </mat-tab>
+            <!-- <mat-tab label="Third">Content 3</mat-tab> -->
+        </mat-tab-group>
+       
+    
+    </div>
 </div>
